@@ -30,7 +30,9 @@ const Projects = () => {
     <GoProjectRoadmap className='project-logo'/>
     <h2>Projects</h2>
   </div>
+  <div className='posts__container'>
     <Project1/>
+  </div>
 </section>
   )
 }

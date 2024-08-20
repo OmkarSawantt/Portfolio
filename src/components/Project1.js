@@ -1,36 +1,24 @@
-import React from 'react';
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-
-
-// import required modules
-import { Pagination } from 'swiper/modules';
-
-export default function Project1() {
+import React from "react";
+import { Link } from "react-router-dom";
+import image from '../images/Projects/GettyImages-626669886.jpeg'
+function Project1() {
   return (
-    <>
-      <Swiper
-        spaceBetween={100}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Pagination]}
-        className="mySwiper"
-      >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
-      </Swiper>
-    </>
+    <article className="post">
+      <div className="post__thumbnail">
+        <img src={image} alt="name" />
+      </div>
+      <div className="post__content">
+        <Link to={`/`}>
+            <h3> postTitle </h3>
+        </Link>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam rem eius illo explicabo nemo, iure consectetur sunt, esse alias dolorum quisquam impedit. Accusantium quaerat beatae enim. Cum impedit doloribus aperiam.</p>
+        <div className="post__footer">
+            <Link to={`/`} className='btn category'>React</Link>
+        </div>
+      </div>
+    </article>
+
   );
 }
+
+export default Project1;
