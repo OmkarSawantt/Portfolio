@@ -1,28 +1,9 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { BsTelephone } from "react-icons/bs";
-import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { FiMail, FiMapPin, FiPhoneCall } from "react-icons/fi";
 import { SiGithub,SiLinkedin ,SiCoursera } from 'react-icons/si'
 const Contact = () => {
-  const quillRef = useRef(null);
-  const modules = {
-    toolbar: [
-      [{ header: [1, 2, false] }],
-      ['bold', 'italic', 'underline', 'strike', 'blockquote'],
-      [{ list: 'ordered' }, { list: 'bullet' }, { indent: '-1' }, { indent: '+1' }],
-      ['link', 'image'],
-      ['clean'],
-    ],
-  };
-
-  const formats = [
-    'header',
-    'bold', 'italic', 'underline', 'strike', 'blockquote',
-    'list', 'bullet', 'indent',
-    'link', 'image',
-  ];
-
   useEffect(() => {
     const section = document.querySelector("section");
 
@@ -44,14 +25,14 @@ const Contact = () => {
     return () => cancelAnimationFrame(rafId);
   }, []);
   return (
-    <section className="Contact">
+    <section className="Contact mt-10">
       <div className="contact-me">
       <div className="con-header">
         <BsTelephone className="con-logo1"/>
         <h2 className="contact-Header">Get In Touch</h2>
       </div>
-      <div className="con-body">
-        <div className="con-info">
+      <div className="con-body flex flex-col sm:flex-row">
+        <div className="con-info w-full sm:w-1/2">
         <h3>Contact Information</h3>
         <div className="info-detail">
             <div className="con-details">
@@ -100,11 +81,7 @@ const Contact = () => {
             </div>
             <div className="form-row2">
                 <label htmlFor="message">Message</label>
-                <ReactQuill
-            ref={quillRef}
-            modules={modules}
-            formats={formats}
-          />
+                <textarea id="message" className="input overflow-auto resize-none  "  rows="4"/>
             </div>
             <button type="submit">Send Message</button>
         </form>

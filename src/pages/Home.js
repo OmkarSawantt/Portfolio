@@ -24,30 +24,31 @@ const Home = () => {
 
     update();
 
-    return () => cancelAnimationFrame(rafId); 
+    return () => cancelAnimationFrame(rafId);
   }, []);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    
+
     const splitTypes = document.querySelectorAll('.intro-description');
 
-    splitTypes.forEach((char) => {
+    splitTypes.forEach((textElement) => {
       const bg =  '#000';
       const fg =  '#fff';
 
-      const text = new SplitType(char, { types: 'chars', tagName: 'span' });
+      // Change `types` from 'chars' to 'words'
+      const text = new SplitType(textElement, { types: 'words', tagName: 'span' });
 
       gsap.fromTo(
-        text.chars,
+        text.words,
         { color: bg, opacity: 0 },
         {
           color: fg,
           opacity: 1,
           duration: 0.3,
-          stagger: 0.02,
+          stagger: 0.2,  // Adjust stagger timing if needed
           scrollTrigger: {
-            trigger: char,
+            trigger: textElement,
             start: 'top 80%',
             end: 'top 20%',
             scrub: true,
