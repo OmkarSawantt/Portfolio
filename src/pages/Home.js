@@ -4,7 +4,7 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import SplitType from 'split-type';
 import Lenis from 'lenis';
-
+import cv from '../images/Omkar_Sawant_CV.pdf'
 const Home = () => {
   useEffect(() => {
     const section = document.querySelector("section");
@@ -81,6 +81,13 @@ const Home = () => {
         <h3>Hi There!</h3>
         <h1>I am Omkar</h1>
         <Text />
+        <a href={cv} download="OmkarCV" target='_blank'>
+        <button className="bg-[#939AFF] hover:bg-[#535cd5] text-[#0D1117] font-bold py-2 px-4 rounded inline-flex items-center md:mx-8 mx-4">
+          <svg className="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
+          <span>Download CV</span>
+        </button>
+        </a>
+
       </div>
       <div className="second">
         <div className="intro-header">

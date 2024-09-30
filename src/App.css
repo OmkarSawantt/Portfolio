@@ -1023,7 +1023,9 @@ background-color: #FFA28B;
   -webkit-text-stroke-color: rgba(255, 255, 255, 0.20);
   -webkit-text-fill-color: transparent;
 }
-
+.content{
+  height: auto;
+}
 @media (max-width: 600px) {
   section {
     padding-top: 4rem;
