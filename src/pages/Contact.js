@@ -53,7 +53,6 @@ const Contact = () => {
           <BsTelephone className="con-logo1" />
           <h2 className="contact-Header">Get In Touch</h2>
         </div>
-<<<<<<< HEAD
         <div className="con-body flex flex-col sm:flex-row">
           <div className="con-info w-full sm:w-1/2">
             <h3>Contact Information</h3>
@@ -70,14 +69,6 @@ const Contact = () => {
                 <FiMapPin className="con-logo" />
                 <h4>Mumbai, Maharashtra</h4>
               </div>
-=======
-        <div className="con-links">
-          <ul className='links-list'>
-          <li><a href='https://github.com/OmkarSawantt' target="_blank"  rel="noreferrer"><SiGithub style={{color:'B384F9', fontSize:'2rem'}}></SiGithub></a></li>
-          <li><a href='https://www.linkedin.com/in/omkar-sawant-5283b1283/' target="_blank"  rel="noreferrer"><SiLinkedin style={{color:'B384F9', fontSize:'2rem'}}></SiLinkedin></a></li>
-          <li><a href='https://www.coursera.org/user/00f3311e7a015bbf1164218a221f1ce9' target="_blank"  rel="noreferrer"><SiCoursera style={{color:'B384F9', fontSize:'2rem'}}></SiCoursera></a></li>
-        </ul>
->>>>>>> 8cf108c8c2fcbc5969e9b6ea5aa230787d61ceb9
             </div>
             <div className="con-links">
               <ul className='links-list'>
