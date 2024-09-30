@@ -16,7 +16,7 @@ const Footer = () => {
         </ul>
         <ul className='second_list'>
           <li><a href='https://github.com/OmkarSawantt' target="_blank"  rel="noreferrer"><SiGithub style={{color:'F67280', fontSize:'2rem'}}></SiGithub></a></li>
-          <li><a href='www.linkedin.com/in/omkar-sawant-5283b1283' target="_blank"  rel="noreferrer"><SiLinkedin style={{color:'F67280', fontSize:'2rem'}}></SiLinkedin></a></li>
+          <li><a href='https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile' target="_blank"  rel="noreferrer"><SiLinkedin style={{color:'F67280', fontSize:'2rem'}}></SiLinkedin></a></li>
           <li><a href='https://www.coursera.org/user/00f3311e7a015bbf1164218a221f1ce9' target="_blank"  rel="noreferrer"><SiCoursera style={{color:'F67280', fontSize:'2rem'}}></SiCoursera></a></li>
         </ul>
       </div>
