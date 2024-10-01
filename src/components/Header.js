@@ -2,7 +2,7 @@ import React, {  useState } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import { FaBars } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
-
+import logo from '../images/pfLogo.png'
 const Header = () => {
   const [isNavShowing, setIsNavShowing] = useState(window.innerWidth > 600 ? true : false);
   const closeNavHandler=()=>{
@@ -16,7 +16,7 @@ const Header = () => {
     <nav>
       <div className="container1 nav__container">
         <NavLink to="/" className="nav__logo">
-          <h1>OS</h1>
+          <img src={logo} alt="OS" width='200px' height='200px' />
         </NavLink>
         { isNavShowing &&<ul className={`nav__menu ${isNavShowing ? 'visible' : 'hidden'}`}>
           <li>
