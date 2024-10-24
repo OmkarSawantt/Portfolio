@@ -4,7 +4,7 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import SplitType from 'split-type';
 import Lenis from 'lenis';
-import cv from '../images/Omkar_Sawant_CV.pdf'
+import cv from '../images/OmkarSawant.pdf'
 const Home = () => {
   useEffect(() => {
     const section = document.querySelector("section");
