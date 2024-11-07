@@ -79,12 +79,12 @@ const Home = () => {
   return (
     <section className="Home">
       <div className="first">
-        <Spline  scene="https://prod.spline.design/BiFOfq5HGPfJ7h3t/scene.splinecode"  className='absolute blur-lg lg:blur-none'/>
+        <Spline  scene="https://prod.spline.design/Kcc-A77v3CV4tZCy/scene.splinecode"  className='absolute blur-lg lg:blur-none'/>
         <h3 className='z-10'>Hi There!</h3>
         <h1 className='z-10'>I am Omkar</h1>
         <Text />
-        <a className='z-10' href={cv} download="OmkarCV" target='_blank' rel="noreferrer">
-        <button className="bg-[#939AFF] hover:bg-[#535cd5]  font-bold py-2 px-4 rounded inline-flex items-center md:mx-8 mx-4 text-white">
+        <a className='z-10 pt-4' href={cv} download="OmkarCV" target='_blank' rel="noreferrer">
+        <button className="bg-white hover:bg-[#535cd5]  font-bold py-2 px-4 rounded inline-flex items-center md:mx-8 mx-4 text-black">
           <svg className="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
           <span>Download CV</span>
         </button>
