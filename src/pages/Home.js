@@ -4,8 +4,9 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import SplitType from 'split-type';
 import Lenis from 'lenis';
-import cv from '../images/OmkarSawant.pdf'
+import cv from '../images/OmkarSawant.pdf';
 import Spline from '@splinetool/react-spline';
+
 const Home = () => {
   useEffect(() => {
     const section = document.querySelector("section");
@@ -14,6 +15,7 @@ const Home = () => {
     let rafId;
 
     const update = () => {
+      if (!section) return; // Ensure section exists
       const newPos = window.pageYOffset;
       const diff = newPos - currentPos;
       const speed = diff * 0.35;
@@ -25,29 +27,35 @@ const Home = () => {
 
     update();
 
-    return () => cancelAnimationFrame(rafId);
+    return () => {
+      cancelAnimationFrame(rafId);
+    };
   }, []);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
     const splitTypes = document.querySelectorAll('.intro-description');
+    const lenis = new Lenis({
+      smoothWheel: true,
+      smoothTouch: false,
+    });
+
+    const animations = [];
 
     splitTypes.forEach((textElement) => {
-      const bg =  '#000';
-      const fg =  '#fff';
+      const bg = '#000';
+      const fg = '#fff';
 
-      // Change `types` from 'chars' to 'words'
       const text = new SplitType(textElement, { types: 'words', tagName: 'span' });
-
-      gsap.fromTo(
+      const animation = gsap.fromTo(
         text.words,
         { color: bg, opacity: 0 },
         {
           color: fg,
           opacity: 1,
           duration: 0.3,
-          stagger: 0.2,  // Adjust stagger timing if needed
+          stagger: 0.2,
           scrollTrigger: {
             trigger: textElement,
             start: 'top 80%',
@@ -57,11 +65,8 @@ const Home = () => {
           },
         }
       );
-    });
 
-    const lenis = new Lenis({
-      smoothWheel: true,
-      smoothTouch: false,
+      animations.push(animation);
     });
 
     function raf(time) {
@@ -72,26 +77,30 @@ const Home = () => {
     requestAnimationFrame(raf);
 
     return () => {
-      lenis.destroy(); // Cleanup Lenis instance
+      animations.forEach(animation => animation.kill());
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      lenis.destroy();
     };
   }, []);
 
   return (
     <section className="Home">
       <div className="first">
-        <Spline  scene="https://prod.spline.design/Kcc-A77v3CV4tZCy/scene.splinecode"  className='absolute blur-lg lg:blur-none'/>
-        <h3 className='z-10'>Hi There!</h3>
-        <h1 className='z-10'>I am Omkar</h1>
+        <Spline scene="https://prod.spline.design/Kcc-A77v3CV4tZCy/scene.splinecode" className="absolute h-screen lg:blur-none" />
+        <h3 className="z-10">Hi There!</h3>
+        <h1 className="z-10">I am Omkar</h1>
         <Text />
-        <a className='z-10 pt-4' href={cv} download="OmkarCV" target='_blank' rel="noreferrer">
-        <button className="bg-white hover:bg-[#535cd5]  font-bold py-2 px-4 rounded inline-flex items-center md:mx-8 mx-4 text-black">
-          <svg className="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
-          <span>Download CV</span>
-        </button>
+        <a className="z-10 pt-4" href={cv} download="OmkarCV" target="_blank" rel="noreferrer">
+          <button className="group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-gray-800/30 backdrop-blur-lg px-6 py-2 text-base font-semibold text-white border-solid transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-gray-600/20 border border-white">
+            <span className="text-lg">Download CV</span>
+            <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]">
+              <div className="relative h-full w-10 bg-white/20"></div>
+            </div>
+          </button>
         </a>
-
       </div>
-      <div className="second z-10 bg-[#0D1117] ">
+      <div className="second z-10 bg-[#0D1117] shadow-inner">
+        <div className="h-2 bg-gradient-to-r from-slate-300 to-[#939AFF] shadow-[0_10px_20px_rgba(147,_154,_255,_0.7)] "></div>
         <div className="intro-header">
           <h2 className="intro-title">Introduction</h2>
           <p className="intro-greeting">
