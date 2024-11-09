@@ -4,7 +4,7 @@ import { FaUserTie } from "react-icons/fa";
 import { LuListTodo } from "react-icons/lu";
 import { TbReport } from "react-icons/tb";
 import { TfiWrite } from "react-icons/tfi";
-import { IoMdChatbubbles } from "react-icons/io";
+import { HiOutlineChatBubbleLeftRight } from "react-icons/hi2";
 const cards = [
   {
     icon: <FaUserTie/>,
@@ -43,7 +43,7 @@ const cards = [
     deployment:null
   },
   {
-    icon:<IoMdChatbubbles/>,
+    icon:<HiOutlineChatBubbleLeftRight/>,
     heading: 'MERN stack ChatApp',
     description: 'A real-time chat app built with the MERN stack and Socket.io, featuring instant messaging, photo sharing, secure encryption, a user-friendly interface, and cross-device support for seamless, private communication.',
     technologies:'React js , Node js , Expree js , Mongodb , Socket.io',
