@@ -4,6 +4,7 @@ import { FaUserTie } from "react-icons/fa";
 import { LuListTodo } from "react-icons/lu";
 import { TbReport } from "react-icons/tb";
 import { TfiWrite } from "react-icons/tfi";
+import { IoMdChatbubbles } from "react-icons/io";
 const cards = [
   {
     icon: <FaUserTie/>,
@@ -41,7 +42,15 @@ const cards = [
     source: 'https://github.com/OmkarSawantt/BlogBytes_Frontend.git',
     deployment:null
   },
-
+  {
+    icon:<IoMdChatbubbles/>,
+    heading: 'MERN stack ChatApp',
+    description: 'A real-time chat app built with the MERN stack and Socket.io, featuring instant messaging, photo sharing, secure encryption, a user-friendly interface, and cross-device support for seamless, private communication.',
+    technologies:'React js , Node js , Expree js , Mongodb , Socket.io',
+    count: '05',
+    source: 'https://github.com/OmkarSawantt/ChatApp',
+    deployment:'https://sonorous.vercel.app'
+  },
 ];
 
 const CardList = () => {
