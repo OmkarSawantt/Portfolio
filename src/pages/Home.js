@@ -86,7 +86,7 @@ const Home = () => {
   return (
     <section className="Home">
       <div className="first">
-        <Spline scene="https://prod.spline.design/Kcc-A77v3CV4tZCy/scene.splinecode" className="absolute h-screen" />
+        <Spline scene="https://prod.spline.design/JjDyrRnKxmn2EKSi/scene.splinecode" className="absolute h-screen" />
         <h3 className="z-10">Hi There!</h3>
         <h1 className="z-10">I am Omkar</h1>
         <Text />
