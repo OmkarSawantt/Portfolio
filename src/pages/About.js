@@ -10,27 +10,6 @@ import Certificates from '../components/Certificates';
 
 const About = () => {
   useEffect(() => {
-    // Parallax effect
-    const section = document.querySelector('section');
-    let currentPos = window.pageYOffset;
-    let rafId;
-
-    const update = () => {
-      const newPos = window.pageYOffset;
-      const diff = newPos - currentPos;
-      const speed = diff * 0.35;
-
-      section.style.transform = `skewY(${speed}deg)`;
-      currentPos = newPos;
-      rafId = requestAnimationFrame(update);
-    };
-
-    update();
-
-    return () => cancelAnimationFrame(rafId); // Cleanup to avoid memory leaks
-  }, []);
-
-  useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
     // Split and animate text in about_summery_part1

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { BsTelephone } from "react-icons/bs";
 import { FiMail, FiMapPin, FiPhoneCall } from "react-icons/fi";
@@ -8,27 +8,6 @@ import 'react-quill/dist/quill.snow.css';
 
 const Contact = () => {
   const form = useRef();
-
-  useEffect(() => {
-    const section = document.querySelector("section");
-
-    let currentPos = window.pageYOffset;
-    let rafId;
-
-    const update = () => {
-      const newPos = window.pageYOffset;
-      const diff = newPos - currentPos;
-      const speed = diff * 0.35;
-
-      section.style.transform = `skewY(${speed}deg)`;
-      currentPos = newPos;
-      rafId = requestAnimationFrame(update);
-    };
-
-    update();
-
-    return () => cancelAnimationFrame(rafId);
-  }, []);
 
   const sendEmail = (e) => {
     e.preventDefault();
